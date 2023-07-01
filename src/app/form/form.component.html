@@ -1,0 +1,24 @@
+<section >
+  <label class="password-lab">
+    Password
+    <input
+      type="password"
+      placeholder="Enter password"
+      [(ngModel)]="password"
+      (input)="checkPassword()"
+    />
+  </label>
+  <div
+    class="indicator-container"
+    [ngClass]="{
+      long: longPassword,
+      easy: easyPassword,
+      medium: mediumPassword,
+      strong: strongPassword
+    }"
+  >
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+  </div>
+</section>

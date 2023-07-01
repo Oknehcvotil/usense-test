@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class FormComponent {
   password: string = '';
-  longPassword: boolean = false;
+  shortPassword: boolean = false;
   easyPassword: boolean = false;
   mediumPassword: boolean = false;
   strongPassword: boolean = false;
@@ -21,16 +21,16 @@ export class FormComponent {
     );
 
     passwordLength > 0 && passwordLength < 8
-      ? (this.longPassword = true)
-      : (this.longPassword = false);
+      ? (this.shortPassword = true)
+      : (this.shortPassword = false);
 
-    if (hasLetters && hasNumbers && hasSymbols && !this.longPassword) {
+    if (hasLetters && hasNumbers && hasSymbols && !this.shortPassword) {
       this.easyPassword = false;
       this.mediumPassword = false;
       this.strongPassword = true;
     } else if (
-      (hasLetters && (hasNumbers || hasSymbols) && !this.longPassword) ||
-      (hasNumbers && hasSymbols && !this.longPassword)
+      (hasLetters && (hasNumbers || hasSymbols) && !this.shortPassword) ||
+      (hasNumbers && hasSymbols && !this.shortPassword)
     ) {
       this.easyPassword = false;
       this.mediumPassword = true;
@@ -43,7 +43,7 @@ export class FormComponent {
       this.easyPassword = false;
       this.mediumPassword = false;
       this.strongPassword = false;
-      this.longPassword = false;
+      this.shortPassword = false;
     }
   }
 }

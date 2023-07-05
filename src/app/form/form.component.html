@@ -1,24 +1,9 @@
-<section >
-  <label class="password-lab">
-    Password
-    <input
-      type="password"
-      placeholder="Enter password"
-      [(ngModel)]="password"
-      (input)="checkPassword()"
-    />
-  </label>
-  <div
-    class="indicator-container"
-    [ngClass]="{
-      short: shortPassword,
-      easy: easyPassword,
-      medium: mediumPassword,
-      strong: strongPassword
-    }"
-  >
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-  </div>
+<section>
+  <app-password-input [(password)]="password" (passwordChange)="checkPassword()"></app-password-input>
+  <app-password-indicator
+    [shortPassword]="shortPassword"
+    [easyPassword]="easyPassword"
+    [mediumPassword]="mediumPassword"
+    [strongPassword]="strongPassword"
+  ></app-password-indicator>
 </section>

@@ -1,5 +1,5 @@
 <section>
-  <app-password-input [(password)]="password" (passwordChange)="checkPassword()"></app-password-input>
+  <app-password-input [(password)]="password" (passwordChange)="passwordChange($event)"></app-password-input>
   <app-password-indicator
     [shortPassword]="shortPassword"
     [easyPassword]="easyPassword"

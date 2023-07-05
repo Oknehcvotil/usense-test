@@ -22,4 +22,9 @@ export class FormComponent {
     this.mediumPassword = result.mediumPassword;
     this.strongPassword = result.strongPassword;
   }
+
+  passwordChange(password: string) {
+    this.password = password;
+    this.checkPassword();
+  }
 }
